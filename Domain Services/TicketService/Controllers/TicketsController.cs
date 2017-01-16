@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks.Dataflow;
 
 namespace TicketService.Controllers
 {
@@ -11,9 +12,12 @@ namespace TicketService.Controllers
     {
         // GET api/tickets
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<int>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var tfBlock = new TransformBlock<string, int>(x => x.Length);
+            tfBlock.Post("Test");
+            var result = await tfBlock.ReceiveAsync();
+            return new int[] { result };
         }
 
         // GET api/tickets/5

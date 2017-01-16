@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:63014/",
+      "applicationUrl": "http://localhost:5001/api/payments",
       "sslPort": 0
     }
   },
@@ -19,7 +19,7 @@
     "PaymentService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/values",
+      "launchUrl": "http://localhost:5001/api/payments",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
