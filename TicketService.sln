@@ -7,6 +7,18 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService", "Domain Ser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Services", "Domain Services", "{E71A156C-0C70-4DE0-839A-2EBB741D2A2E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PaymentService", "Domain Services\PaymentService\PaymentService.xproj", "{537A7849-809E-4A18-900B-014B256920FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment Service", "Payment Service", "{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket Service", "Ticket Service", "{F076BB92-B92B-4148-9E81-47E78308FB85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Services", "Application Services", "{DFCC5881-0797-48E1-9FCF-A659ACF9D6CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5399C8C1-C9FF-4420-A9DB-DA410DC059BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +29,18 @@ Global
 		{930F73E3-EC38-494A-ABF3-FC51B0C317FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930F73E3-EC38-494A-ABF3-FC51B0C317FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930F73E3-EC38-494A-ABF3-FC51B0C317FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537A7849-809E-4A18-900B-014B256920FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537A7849-809E-4A18-900B-014B256920FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537A7849-809E-4A18-900B-014B256920FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537A7849-809E-4A18-900B-014B256920FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{930F73E3-EC38-494A-ABF3-FC51B0C317FC} = {E71A156C-0C70-4DE0-839A-2EBB741D2A2E}
+		{930F73E3-EC38-494A-ABF3-FC51B0C317FC} = {F076BB92-B92B-4148-9E81-47E78308FB85}
+		{537A7849-809E-4A18-900B-014B256920FB} = {D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}
+		{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C} = {E71A156C-0C70-4DE0-839A-2EBB741D2A2E}
+		{F076BB92-B92B-4148-9E81-47E78308FB85} = {E71A156C-0C70-4DE0-839A-2EBB741D2A2E}
 	EndGlobalSection
 EndGlobal
