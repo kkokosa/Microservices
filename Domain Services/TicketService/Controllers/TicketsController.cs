@@ -12,12 +12,15 @@ namespace TicketService.Controllers
     {
         // GET api/tickets
         [HttpGet]
-        public async Task<IEnumerable<int>> Get()
+        public async Task<IEnumerable<string>> Get()
         {
-            var tfBlock = new TransformBlock<string, int>(x => x.Length);
-            tfBlock.Post("Test");
-            var result = await tfBlock.ReceiveAsync();
-            return new int[] { result };
+            var starter = new TransformBlock<string, string>(x => x.ToLowerInvariant());
+            var caller = new RestCall<string,string>("HTTP://localHoST:5001/api/payments");
+            starter.LinkTo(caller);
+
+            starter.Post("test");
+            var result = await caller.ReceiveAsync();
+            return new string[] { result };
         }
 
         // GET api/tickets/5
