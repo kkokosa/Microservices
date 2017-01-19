@@ -19,7 +19,7 @@
     "TicketService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/tickets",
+      "launchUrl": "http://localhost:5051/api/tickets",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

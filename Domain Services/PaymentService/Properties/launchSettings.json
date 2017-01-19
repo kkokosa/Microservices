@@ -19,7 +19,7 @@
     "PaymentService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5001/api/payments",
+      "launchUrl": "http://localhost:5052/api/payments",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

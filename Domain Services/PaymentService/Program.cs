@@ -17,7 +17,7 @@ namespace PaymentService
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5001/")
+                .UseUrls("http://localhost:5052/")
                 .Build();
 
             host.Run();
