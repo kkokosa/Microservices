@@ -24,10 +24,14 @@ namespace TicketService
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        //  The ConfigureServices method typically returns void, but if its signature is changed to return IServiceProvider, a different container can be configured and returned.
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var container = new Infrastructure.IoC.DryIoc.DryIocContainer();
+            container.Configure(services);
+            return container.GetServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
