@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Infrastructure.IoC;
 
 namespace TicketService
 {
     public class Startup
     {
+        private IIoCContainer container;
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -29,18 +32,23 @@ namespace TicketService
         {
             services.AddMvc();
 
-            var container = new Infrastructure.IoC.DryIoc.DryIocContainer();
-            container.Configure(services);
-            return container.GetServiceProvider();
+            this.container = new Infrastructure.IoC.DryIoc.DryIocContainer();
+            this.container.Configure(services, 
+                new IIoCModule[] {
+                    new TicketService.Commands.Module(),
+                    new TicketService.Queries.Module() });
+            return this.container.GetServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IApplicationLifetime lifetime)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            lifetime.ApplicationStopped.Register(() => this.container.Dispose());
         }
     }
 }

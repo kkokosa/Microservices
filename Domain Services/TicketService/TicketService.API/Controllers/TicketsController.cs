@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks.Dataflow;
+using ServicesFramework.CQRS;
+using TicketService.Commands;
 
 namespace TicketService.Controllers
 {
@@ -12,9 +14,11 @@ namespace TicketService.Controllers
     {
         // GET api/tickets
         [HttpGet]
-        public async Task<IEnumerable<string>> Get()
+        public async Task<string> Get(
+            [FromServices] ICommandHandler<BuyTicketCommand, BuyTicketCommandResult> handler)
         {
-            return new string[] { "Hello", "world", "!" };
+            var result = handler.Handle(new BuyTicketCommand() { Name = "World" });
+            return result.Message;
         }
 
         // GET api/tickets/5

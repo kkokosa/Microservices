@@ -2,7 +2,9 @@
   "version": "1.0.0-*",
 
   "dependencies": {
+    "Infrastructure.IoC": "1.0.0-*",
     "NETStandard.Library": "1.6.1",
+    "ServicesFramework.CQRS": "1.0.0-*",
     "TicketService.Domain": "1.0.0-*"
   },
 

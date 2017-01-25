@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.IoC
 {
-    public interface IoCContainer
+    public interface IIoCContainer : IDisposable
     {
-        void Configure(IServiceCollection services);
+        void Configure(IServiceCollection services, IEnumerable<IIoCModule> modules);
 
         IServiceProvider GetServiceProvider();
     }

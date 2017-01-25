@@ -43,6 +43,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC.SimpleIn
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC.Autofac", "Infrastructure\Infrastructure.IoC.Autofac\Infrastructure.IoC.Autofac.xproj", "{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServicesFramework.CQRS", "Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.xproj", "{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +112,6 @@ Global
 		{77AE39F5-46DE-4FB6-8EC5-6F3D6CA73DAD} = {691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}
 		{8653B768-CCA2-4CD4-BA97-ABE53FA370C8} = {691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}
 		{33A7859E-AD94-44B4-B1D5-333B4F51C0BD} = {691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}
+		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059} = {6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}
 	EndGlobalSection
 EndGlobal

@@ -8,7 +8,7 @@ using DryIoc.Microsoft.DependencyInjection;
 
 namespace Infrastructure.IoC.DryIoc
 {
-    public class DryIocContainer : IoCContainer
+    public class DryIocContainer : IIoCContainer
     {
         private IContainer container;
 
@@ -17,7 +17,7 @@ namespace Infrastructure.IoC.DryIoc
             container = new Container();
         }
 
-        public void Configure(IServiceCollection services)
+        public void Configure(IServiceCollection services, IEnumerable<IIoCModule> modules)
         {
             container = container.WithDependencyInjectionAdapter(services,
                 // optional: propagate exception if specified types are not resolved, and prevent fallback to default Asp resolution
@@ -28,6 +28,27 @@ namespace Infrastructure.IoC.DryIoc
         {
             return container.ConfigureServiceProvider<Dummy>();
         }
+
+        #region IDisposable Support
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    container.Dispose();
+                }
+                disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        #endregion
     }
 
     public class Dummy
