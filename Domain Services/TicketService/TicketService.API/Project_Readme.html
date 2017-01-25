@@ -131,5 +131,8 @@
 
     This layer should not reference domain itself, to not leak to the outside world. It is hence forbidden to reference Domain from API, which can reference only Commands and Queries assemblies.
 
+    <h2>Dependency Injection</h2>
+
+    This microservice replaces default ASP.NET service container with custom container wrapped around common interface. This allows simple replacement to container which best suits your needs. As container <a href="http://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison">really vary both in terms of performance and features</a>, you should choose it carefully. Currently wrappers for X and Y are provided.
 </body>
 </html>
