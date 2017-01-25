@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService", "Domain Services\TicketService\TicketService.API\TicketService.xproj", "{930F73E3-EC38-494A-ABF3-FC51B0C317FC}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.API", "Domain Services\TicketService\TicketService.API\TicketService.API.xproj", "{930F73E3-EC38-494A-ABF3-FC51B0C317FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Services", "Domain Services", "{E71A156C-0C70-4DE0-839A-2EBB741D2A2E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PaymentService", "Domain Services\PaymentService\PaymentService.API\PaymentService.xproj", "{537A7849-809E-4A18-900B-014B256920FB}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PaymentService.API", "Domain Services\PaymentService\PaymentService.API\PaymentService.API.xproj", "{537A7849-809E-4A18-900B-014B256920FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment Service", "Payment Service", "{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}"
 EndProject
@@ -21,10 +21,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0314E07-4464-4CC3-8BE7-73C20D15D91D}"
 	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.Domain", "Domain Services\TicketService\TicketService.Domain\TicketService.Domain.xproj", "{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServicesFramework.DDD", "Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.xproj", "{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.Commands", "Domain Services\TicketService\TicketService.Commands\TicketService.Commands.xproj", "{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.Queries", "Domain Services\TicketService\TicketService.Queries\TicketService.Queries.xproj", "{F50020CC-BA39-4A72-AE85-76E36D2C6572}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +49,22 @@ Global
 		{537A7849-809E-4A18-900B-014B256920FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537A7849-809E-4A18-900B-014B256920FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537A7849-809E-4A18-900B-014B256920FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50020CC-BA39-4A72-AE85-76E36D2C6572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50020CC-BA39-4A72-AE85-76E36D2C6572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50020CC-BA39-4A72-AE85-76E36D2C6572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50020CC-BA39-4A72-AE85-76E36D2C6572}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +74,9 @@ Global
 		{537A7849-809E-4A18-900B-014B256920FB} = {D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}
 		{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C} = {E71A156C-0C70-4DE0-839A-2EBB741D2A2E}
 		{F076BB92-B92B-4148-9E81-47E78308FB85} = {E71A156C-0C70-4DE0-839A-2EBB741D2A2E}
+		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C} = {F076BB92-B92B-4148-9E81-47E78308FB85}
+		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC} = {6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}
+		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC} = {F076BB92-B92B-4148-9E81-47E78308FB85}
+		{F50020CC-BA39-4A72-AE85-76E36D2C6572} = {F076BB92-B92B-4148-9E81-47E78308FB85}
 	EndGlobalSection
 EndGlobal
