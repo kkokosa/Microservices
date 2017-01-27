@@ -9,6 +9,10 @@ using TicketService.Commands;
 
 namespace TicketService.Controllers
 {
+    /// <summary>
+    /// Martin Fowler "The controller's job is to take the user's input and figure out what to do with it."
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     [Route("api/[controller]")]
     public class TicketsController : Controller
     {
