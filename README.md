@@ -22,3 +22,6 @@ Roadmap:
 	- [ ] Plain template
 * Suave DDD microservice
 	- [ ] Plain template
+* Deployment
+	- [ ] Docker configuration
+	- [ ] Docker Compose configuration
