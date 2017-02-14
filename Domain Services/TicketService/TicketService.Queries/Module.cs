@@ -9,9 +9,8 @@ namespace TicketService.Queries
 {
     public class Module : IIoCModule
     {
-        public void RegisterInContainer(IIoCContainer container)
+        public void RegisterInContainer(IIoCContainerRegistration container)
         {
-            throw new NotImplementedException();
         }
     }
 }

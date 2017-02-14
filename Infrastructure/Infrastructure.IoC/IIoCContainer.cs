@@ -39,8 +39,16 @@ namespace Infrastructure.IoC
     /// <seealso cref="System.IDisposable" />
     public interface IIoCContainer : IDisposable
     {
-        void Configure(IServiceCollection services, IEnumerable<IIoCModule> modules);
+        /// <summary>
+        /// Configures the specified modules and additionaly registers ASP.NET Core services.
+        /// </summary>
+        /// <param name="services">The services from ASP.NET Core pipeline to be registered in the container.</param>
+        /// <param name="modules">The modules that registers its own types.</param>
+        void Configure(IEnumerable<IIoCModule> modules, IServiceCollection services);
 
+        /// <summary>
+        /// Gets the ASP.NET Core service provider wrapper.
+        /// </summary>
         IServiceProvider GetServiceProvider();
     }
 }

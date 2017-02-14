@@ -33,10 +33,12 @@ namespace TicketService
             services.AddMvc();
 
             this.container = new Infrastructure.IoC.DryIoc.DryIocContainer();
-            this.container.Configure(services, 
+            this.container.Configure( 
                 new IIoCModule[] {
                     new TicketService.Commands.Module(),
-                    new TicketService.Queries.Module() });
+                    new TicketService.Queries.Module()
+                },
+                services);
             return this.container.GetServiceProvider();
         }
 

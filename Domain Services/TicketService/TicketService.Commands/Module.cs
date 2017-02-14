@@ -1,4 +1,5 @@
 ﻿using Infrastructure.IoC;
+using ServicesFramework.CQRS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace TicketService.Commands
 {
     public class Module : IIoCModule
     {
-        public void RegisterInContainer(IIoCContainer container)
+        public void RegisterInContainer(IIoCContainerRegistration containerRegistration)
         {
-            throw new NotImplementedException();
+            containerRegistration.Register<ICommandHandler<BuyTicketCommand, BuyTicketCommandResult>, BuyTicketCommandHandler>();
         }
     }
 }

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.IoC
 {
-    public interface IIoCModule
+    public interface IIoCContainerRegistration
     {
-        void RegisterInContainer(IIoCContainerRegistration container);
+        void Register<TService, TImplementation>() where TImplementation : TService;
     }
 }
