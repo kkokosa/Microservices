@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace ServicesFramework.DDD
 {
-    public class AggregateRoot
+    public class Aggregate
     {
     }
 }
