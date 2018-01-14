@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.API", "Domain Services\TicketService\TicketService.API\TicketService.API.xproj", "{930F73E3-EC38-494A-ABF3-FC51B0C317FC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Services", "Domain Services", "{E71A156C-0C70-4DE0-839A-2EBB741D2A2E}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PaymentService.API", "Domain Services\PaymentService\PaymentService.API\PaymentService.API.xproj", "{537A7849-809E-4A18-900B-014B256920FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payments.PaymentService", "Payments.PaymentService", "{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}"
 EndProject
@@ -21,29 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0314E07-4464-4CC3-8BE7-73C20D15D91D}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tickets.Domain", "Domain Services\TicketService\TicketService.Domain\Tickets.Domain.xproj", "{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServicesFramework.DDD", "Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.xproj", "{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.Commands", "Domain Services\TicketService\TicketService.Commands\TicketService.Commands.xproj", "{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TicketService.Queries", "Domain Services\TicketService\TicketService.Queries\TicketService.Queries.xproj", "{F50020CC-BA39-4A72-AE85-76E36D2C6572}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC.DryIoc", "Infrastructure\Infrastructure.IoC.DryIoc\Infrastructure.IoC.DryIoc.xproj", "{AC5B39F1-0B86-4816-84C8-BCF86E0C4F8A}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC", "Infrastructure\Infrastructure.IoC\Infrastructure.IoC.xproj", "{77AE39F5-46DE-4FB6-8EC5-6F3D6CA73DAD}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC.SimpleInjector", "Infrastructure\Infrastructure.IoC.SimpleInjector\Infrastructure.IoC.SimpleInjector.xproj", "{8653B768-CCA2-4CD4-BA97-ABE53FA370C8}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.IoC.Autofac", "Infrastructure\Infrastructure.IoC.Autofac\Infrastructure.IoC.Autofac.xproj", "{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServicesFramework.CQRS", "Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.xproj", "{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{A0018794-17FF-4BB8-9E62-0C62D8D893F4}"
 EndProject
@@ -58,6 +35,28 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6A84DF11-0BAF-44B4-8BC0-2F4D56F044B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Services", "Domain Services", "{CEA9FA7A-7D17-4E48-A7E3-C07C74E5ED86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketService.API", "Domain Services\TicketService\TicketService.API\TicketService.API.csproj", "{930F73E3-EC38-494A-ABF3-FC51B0C317FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentService.API", "Domain Services\PaymentService\PaymentService.API\PaymentService.API.csproj", "{537A7849-809E-4A18-900B-014B256920FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketService.Domain", "Domain Services\TicketService\TicketService.Domain\TicketService.Domain.csproj", "{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServicesFramework.DDD", "Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj", "{A010095E-3A6B-43B1-BF1C-5DD3E53388AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketService.Commands", "Domain Services\TicketService\TicketService.Commands\TicketService.Commands.csproj", "{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketService.Queries", "Domain Services\TicketService\TicketService.Queries\TicketService.Queries.csproj", "{F50020CC-BA39-4A72-AE85-76E36D2C6572}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IoC.DryIoc", "Infrastructure\Infrastructure.IoC.DryIoc\Infrastructure.IoC.DryIoc.csproj", "{AC5B39F1-0B86-4816-84C8-BCF86E0C4F8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IoC", "Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj", "{77AE39F5-46DE-4FB6-8EC5-6F3D6CA73DAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IoC.SimpleInjector", "Infrastructure\Infrastructure.IoC.SimpleInjector\Infrastructure.IoC.SimpleInjector.csproj", "{8653B768-CCA2-4CD4-BA97-ABE53FA370C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IoC.Autofac", "Infrastructure\Infrastructure.IoC.Autofac\Infrastructure.IoC.Autofac.csproj", "{33A7859E-AD94-44B4-B1D5-333B4F51C0BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServicesFramework.CQRS", "Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj", "{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,10 +113,16 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{930F73E3-EC38-494A-ABF3-FC51B0C317FC} = {F076BB92-B92B-4148-9E81-47E78308FB85}
-		{537A7849-809E-4A18-900B-014B256920FB} = {D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}
 		{D3D12DC3-01A0-45B4-A8CD-159791E3EC8C} = {CEA9FA7A-7D17-4E48-A7E3-C07C74E5ED86}
 		{F076BB92-B92B-4148-9E81-47E78308FB85} = {806C700F-3489-47EB-88C3-6BCDFFC5898B}
+		{36AC8DA8-60B0-4388-A420-1C8B9C5374B5} = {A0018794-17FF-4BB8-9E62-0C62D8D893F4}
+		{3AF9A4E3-402A-42EE-BACC-6C242ADA662B} = {A0018794-17FF-4BB8-9E62-0C62D8D893F4}
+		{806C700F-3489-47EB-88C3-6BCDFFC5898B} = {3AF9A4E3-402A-42EE-BACC-6C242ADA662B}
+		{DFF55DED-12EA-41E4-9AB6-D396CA755447} = {3AF9A4E3-402A-42EE-BACC-6C242ADA662B}
+		{6A84DF11-0BAF-44B4-8BC0-2F4D56F044B0} = {36AC8DA8-60B0-4388-A420-1C8B9C5374B5}
+		{CEA9FA7A-7D17-4E48-A7E3-C07C74E5ED86} = {36AC8DA8-60B0-4388-A420-1C8B9C5374B5}
+		{930F73E3-EC38-494A-ABF3-FC51B0C317FC} = {F076BB92-B92B-4148-9E81-47E78308FB85}
+		{537A7849-809E-4A18-900B-014B256920FB} = {D3D12DC3-01A0-45B4-A8CD-159791E3EC8C}
 		{E0BD36D7-EA28-4D3E-AC06-2C78B8AD563C} = {DFF55DED-12EA-41E4-9AB6-D396CA755447}
 		{A010095E-3A6B-43B1-BF1C-5DD3E53388AC} = {6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}
 		{2F77AA54-9633-40A0-AC22-AB52B9D8D2FC} = {F076BB92-B92B-4148-9E81-47E78308FB85}
@@ -127,11 +132,8 @@ Global
 		{8653B768-CCA2-4CD4-BA97-ABE53FA370C8} = {691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}
 		{33A7859E-AD94-44B4-B1D5-333B4F51C0BD} = {691B6728-66FC-4D7E-A337-A7A0BD2B4C1A}
 		{2DADFED1-8BC8-4E48-BAFB-26BF83D1E059} = {6DCF17CB-68D7-4513-AD68-B638DAC7FC5F}
-		{36AC8DA8-60B0-4388-A420-1C8B9C5374B5} = {A0018794-17FF-4BB8-9E62-0C62D8D893F4}
-		{3AF9A4E3-402A-42EE-BACC-6C242ADA662B} = {A0018794-17FF-4BB8-9E62-0C62D8D893F4}
-		{806C700F-3489-47EB-88C3-6BCDFFC5898B} = {3AF9A4E3-402A-42EE-BACC-6C242ADA662B}
-		{DFF55DED-12EA-41E4-9AB6-D396CA755447} = {3AF9A4E3-402A-42EE-BACC-6C242ADA662B}
-		{6A84DF11-0BAF-44B4-8BC0-2F4D56F044B0} = {36AC8DA8-60B0-4388-A420-1C8B9C5374B5}
-		{CEA9FA7A-7D17-4E48-A7E3-C07C74E5ED86} = {36AC8DA8-60B0-4388-A420-1C8B9C5374B5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {351ECB15-691D-4504-98E3-B02AA18843E8}
 	EndGlobalSection
 EndGlobal
