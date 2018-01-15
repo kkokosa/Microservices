@@ -5,7 +5,7 @@ using ServicesFramework.DDD;
 
 namespace Trips.Domain
 {
-    class TripId : ValueObject
+    class TripId : ValueObject<TripId>
     {
     }
 }
