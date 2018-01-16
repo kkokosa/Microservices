@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ServicesFramework.DDD
 {
-    public interface IAggregateRoot
+    public interface IRepository<T> where T : IAggregateRoot
     {
+        IUnitOfWork UnitOfWork { get; }
     }
 }

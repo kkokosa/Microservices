@@ -5,7 +5,7 @@ namespace Trips.Domain
 {
     public class Trip 
         : Entity<Trip, TripId>, 
-          IAggregateRoot<Trip>
+          IAggregateRoot
     {
         private TripId tripId;
         private PlaceId placeId;
