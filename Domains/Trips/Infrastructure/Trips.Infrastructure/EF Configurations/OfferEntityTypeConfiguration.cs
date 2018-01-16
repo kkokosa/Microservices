@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Trips.Domain;
 
-namespace Trips.Infrastructure.EF_Configurations
+namespace Trips.Infrastructure
 {
     class OfferEntityTypeConfiguration : IEntityTypeConfiguration<Offer>
     {

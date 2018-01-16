@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Trips.API
 {
@@ -33,6 +34,9 @@ namespace Trips.API
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddEntityFrameworkSqlServer()
+                    .AddDbContext<Trips.Infrastructure.OffersDbContext>();
+            services.AddOptions();
 
             this.container = new global::Infrastructure.IoC.DryIoc.DryIocContainer();
             this.container.Configure(
@@ -40,9 +44,6 @@ namespace Trips.API
                     new Trips.Commands.Module()
                 },
                 services);
-
-            services.AddDbContext<Trips.Infrastructure.OffersDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("TripsDomainDatabase")));
 
             return this.container.GetServiceProvider();
         }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Trips.Commands;
 using Trips.Commands.Handlers;
+using Trips.Domain;
+using Trips.Infrastructure;
 
 namespace Trips.Commands
 {
@@ -14,6 +16,7 @@ namespace Trips.Commands
         public void RegisterInContainer(IIoCContainerRegistration containerRegistration)
         {
             containerRegistration.Register<ICommandHandler<CreateOfferCommand, CreateOfferCommandResult>, CreateOfferCommandHandler>();
+            containerRegistration.Register<IOfferRepository, OfferRepository>();
         }
     }
 }

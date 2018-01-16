@@ -9,6 +9,7 @@
     <ProjectReference Include="..\..\..\..\Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
     <ProjectReference Include="..\..\Domain\Trips.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Trips.Infrastructure\Trips.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
