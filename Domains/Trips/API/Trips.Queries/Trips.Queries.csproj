@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
   </ItemGroup>
