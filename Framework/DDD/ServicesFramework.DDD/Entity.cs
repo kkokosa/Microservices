@@ -12,7 +12,7 @@ namespace ServicesFramework.DDD
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TKey"></typeparam>
-    public abstract class Entity<T, TKey> 
+    public abstract class Entity<T, TKey> : IEntity
         where T : Entity<T, TKey>
     {
         private int? oldHashCode;
@@ -62,7 +62,7 @@ namespace ServicesFramework.DDD
         /// <summary>
         /// Get or set the Id of this entity
         /// </summary>
-        public abstract TKey Id { get; set; }
+        public abstract TKey Id { get; protected set; }
 
         /// <summary>
         /// Equality operator so we can have == semantics

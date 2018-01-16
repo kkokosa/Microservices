@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ServicesFramework.DDD
 {
-    public class Aggregate
+    public interface IEntity
     {
     }
 }

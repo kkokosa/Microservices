@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicketService.Domain
 {
-    public class Ticket : Aggregate
+    public class Ticket
     {
     }
 }
