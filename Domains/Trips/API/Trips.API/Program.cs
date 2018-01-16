@@ -19,7 +19,11 @@ namespace Trips.API
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5053/")
                 .Build();
     }
 }
