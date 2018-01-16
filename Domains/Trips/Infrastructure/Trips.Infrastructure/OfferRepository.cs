@@ -23,9 +23,9 @@ namespace Trips.Infrastructure
             return context.Offers.Add(offer).Entity;
         }
 
-        public async Task<bool> SaveChangesAsync()
+        public async Task<bool> SaveChanges()
         {
-            var entitiesWritten = await context.SaveChangesAsync();
+            var entitiesWritten = context.SaveChanges();
             return true;
         }
     }

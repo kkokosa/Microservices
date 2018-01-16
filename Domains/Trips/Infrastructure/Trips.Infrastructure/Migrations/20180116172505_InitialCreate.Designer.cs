@@ -11,7 +11,7 @@ using Trips.Infrastructure;
 namespace Trips.Infrastructure.Migrations
 {
     [DbContext(typeof(OffersDbContext))]
-    [Migration("20180116164708_InitialCreate")]
+    [Migration("20180116172505_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,18 +41,20 @@ namespace Trips.Infrastructure.Migrations
 
             modelBuilder.Entity("Trips.Domain.Photo", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("_technicalId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
 
                     b.Property<string>("FilePath");
 
+                    b.Property<string>("Id");
+
                     b.Property<int?>("Offer_technicalId");
 
                     b.Property<string>("Title");
 
-                    b.HasKey("Id");
+                    b.HasKey("_technicalId");
 
                     b.HasIndex("Offer_technicalId");
 

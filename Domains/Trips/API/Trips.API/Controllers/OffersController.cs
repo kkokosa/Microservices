@@ -28,16 +28,10 @@ namespace Trips.API.Controllers
         // POST api/offers
         [HttpPost]
         public string Post(
-            [FromBody]string name,
-            [FromBody]string description,
-            [FromBody]int numberOfDays,
+            [FromBody]CreateOfferCommand createOfferCommand,
             [FromServices] ICommandHandler<CreateOfferCommand, CreateOfferCommandResult> handler)
         {
-            var result = handler.Handle(new CreateOfferCommand() {
-                Name = name,
-                Description = description,
-                NumberOfDays = numberOfDays
-            });
+            var result = handler.Handle(createOfferCommand);
             return result.Message;
         }
 

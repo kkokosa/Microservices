@@ -18,8 +18,9 @@ namespace Trips.Commands.Handlers
         public CreateOfferCommandResult Handle(CreateOfferCommand command)
         {
             var offer = new Offer(command.Name, command.Description, command.NumberOfDays);
+            offer.AssignPhoto();
             offerRepository.Add(offer);
-            offerRepository.SaveChangesAsync();
+            offerRepository.SaveChanges();
             return new CreateOfferCommandResult()
             {
                 Message = $"Hello {command.Name}!"

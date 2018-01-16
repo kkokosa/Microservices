@@ -15,6 +15,7 @@ namespace Trips.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new OfferEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new PhotoEntityTypeConfiguration());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

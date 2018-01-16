@@ -29,15 +29,17 @@ namespace Trips.Infrastructure.Migrations
                 name: "Photo",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    _technicalId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     FilePath = table.Column<string>(nullable: true),
+                    Id = table.Column<string>(nullable: true),
                     Offer_technicalId = table.Column<int>(nullable: true),
                     Title = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Photo", x => x.Id);
+                    table.PrimaryKey("PK_Photo", x => x._technicalId);
                     table.ForeignKey(
                         name: "FK_Photo_Offers_Offer_technicalId",
                         column: x => x.Offer_technicalId,

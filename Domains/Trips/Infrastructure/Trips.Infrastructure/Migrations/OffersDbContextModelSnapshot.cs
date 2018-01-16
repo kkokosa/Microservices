@@ -40,18 +40,20 @@ namespace Trips.Infrastructure.Migrations
 
             modelBuilder.Entity("Trips.Domain.Photo", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("_technicalId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
 
                     b.Property<string>("FilePath");
 
+                    b.Property<string>("Id");
+
                     b.Property<int?>("Offer_technicalId");
 
                     b.Property<string>("Title");
 
-                    b.HasKey("Id");
+                    b.HasKey("_technicalId");
 
                     b.HasIndex("Offer_technicalId");
 
