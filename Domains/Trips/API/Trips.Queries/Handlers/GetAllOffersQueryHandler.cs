@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
+using Dapper;
 using ServicesFramework.CQRS;
 
 namespace Trips.Queries.Handlers
@@ -9,14 +13,15 @@ namespace Trips.Queries.Handlers
     {
         public GetAllOffersQueryResult Handle(GetAllOffersQuery command)
         {
-            return new GetAllOffersQueryResult()
+            using (IDbConnection db = new SqlConnection("Server=DotNetTraining\\SQLEXPRESS;Database=TravelAgency.TripsDomainDatabase;Trusted_Connection=True;"))
             {
-                Count = 1,
-                Orders = new List<OfferViewModel>()
+                var offers = db.Query<OfferViewModel>("Select Name, Description, NumberOfDays From Offers").ToList();
+                return new GetAllOffersQueryResult()
                 {
-                    new OfferViewModel() { Name = "Aa" }
-                }
-            };
+                    Count = offers.Count,
+                    Orders = offers
+                };
+            }            
         }
     }
 }
