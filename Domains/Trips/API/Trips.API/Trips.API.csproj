@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC.DryIoc\Infrastructure.IoC.DryIoc.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Trips.Infrastructure\Trips.Infrastructure.csproj" />
     <ProjectReference Include="..\Trips.Command\Trips.Commands.csproj" />
   </ItemGroup>
 
