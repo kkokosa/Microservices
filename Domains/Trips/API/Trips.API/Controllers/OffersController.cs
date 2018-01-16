@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ServicesFramework.CQRS;
 using Trips.Commands;
+using Trips.Queries;
 
 namespace Trips.API.Controllers
 {
@@ -13,9 +14,11 @@ namespace Trips.API.Controllers
     {
         // GET api/offers
         [HttpGet]
-        public IEnumerable<string> Get()
+        public GetAllOffersQueryResult Get(
+            [FromServices] IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult> handler)
         {
-            return new string[] { "value1", "value2" };
+            var result = handler.Handle(new GetAllOffersQuery());
+            return result;
         }
 
         // GET api/offers/5

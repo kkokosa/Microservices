@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Trips.Infrastructure\Trips.Infrastructure.csproj" />
     <ProjectReference Include="..\Trips.Command\Trips.Commands.csproj" />
+    <ProjectReference Include="..\Trips.Queries\Trips.Queries.csproj" />
   </ItemGroup>
 
 </Project>

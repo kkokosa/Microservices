@@ -41,7 +41,8 @@ namespace Trips.API
             this.container = new global::Infrastructure.IoC.DryIoc.DryIocContainer();
             this.container.Configure(
                 new IIoCModule[] {
-                    new Trips.Commands.Module()
+                    new Trips.Commands.Module(),
+                    new Trips.Queries.Module()
                 },
                 services);
 

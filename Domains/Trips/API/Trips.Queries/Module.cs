@@ -1,9 +1,11 @@
 ﻿using Infrastructure.IoC;
+using ServicesFramework.CQRS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Trips.Queries;
+using Trips.Queries.Handlers;
 
 namespace Trips.Queries
 {
@@ -11,7 +13,7 @@ namespace Trips.Queries
     {
         public void RegisterInContainer(IIoCContainerRegistration containerRegistration)
         {
-            containerRegistration.Register<IGetAllOffersQuery, GetAllOffersQuery>();
+            containerRegistration.Register<IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult>, GetAllOffersQueryHandler>();
         }
     }
 }
