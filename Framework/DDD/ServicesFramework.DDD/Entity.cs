@@ -11,11 +11,13 @@ namespace ServicesFramework.DDD
     /// https://ayende.com/blog/2500/generic-entity-equality
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TKey"></typeparam>
-    public abstract class Entity<T, TKey> : IEntity
-        where T : Entity<T, TKey>
+    /// <typeparam name="TDomainId"></typeparam>
+    public abstract class Entity<T, TDomainId> : IEntity
+        where T : Entity<T, TDomainId>
     {
-        private int? oldHashCode;
+        protected int _technicalId;
+
+        private int? cachedHashCode;
 
         /// <summary>
         /// Determines whether the specified <see cref="T:System.Object"></see> is equal to the current <see cref="T:System.Object"></see>.
@@ -30,8 +32,8 @@ namespace ServicesFramework.DDD
             if (other == null)
                 return false;
             //to handle the case of comparing two new objects
-            bool otherIsTransient = Equals(other.Id, default(TKey));
-            bool thisIsTransient = Equals(this.Id, default(TKey));
+            bool otherIsTransient = Equals(other.Id, default(TDomainId));
+            bool thisIsTransient = Equals(this.Id, default(TDomainId));
             if (otherIsTransient && thisIsTransient)
                 return ReferenceEquals(other, this);
             return other.Id.Equals(Id);
@@ -46,15 +48,15 @@ namespace ServicesFramework.DDD
         public override int GetHashCode()
         {
             //This is done se we won't change the hash code
-            if (oldHashCode.HasValue)
-                return oldHashCode.Value;
-            bool thisIsTransient = Equals(this.Id, default(TKey));
+            if (cachedHashCode.HasValue)
+                return cachedHashCode.Value;
+            bool thisIsTransient = Equals(this.Id, default(TDomainId));
             //When we are transient, we use the base GetHashCode()
             //and remember it, so an instance can't change its hash code.
             if (thisIsTransient)
             {
-                oldHashCode = base.GetHashCode();
-                return oldHashCode.Value;
+                cachedHashCode = base.GetHashCode();
+                return cachedHashCode.Value;
             }
             return Id.GetHashCode();
         }
@@ -62,12 +64,12 @@ namespace ServicesFramework.DDD
         /// <summary>
         /// Get or set the Id of this entity
         /// </summary>
-        public abstract TKey Id { get; protected set; }
+        public abstract TDomainId Id { get; protected set; }
 
         /// <summary>
         /// Equality operator so we can have == semantics
         /// </summary>
-        public static bool operator==(Entity<T, TKey> x, Entity<T, TKey> y)
+        public static bool operator==(Entity<T, TDomainId> x, Entity<T, TDomainId> y)
         {
             return Equals(x, y);
         }
@@ -75,7 +77,7 @@ namespace ServicesFramework.DDD
         /// <summary>
         /// Inequality operator so we can have != semantics
         /// </summary>
-        public static bool operator!=(Entity<T, TKey> x, Entity<T, TKey> y)
+        public static bool operator!=(Entity<T, TDomainId> x, Entity<T, TDomainId> y)
         {
             return !(x == y);
         }

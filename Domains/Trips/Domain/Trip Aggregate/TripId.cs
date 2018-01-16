@@ -5,8 +5,5 @@ using ServicesFramework.DDD;
 
 namespace Trips.Domain
 {
-    public class Offer 
-    {
 
-    }
 }

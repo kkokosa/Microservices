@@ -4,11 +4,14 @@ using System;
 namespace Trips.Domain
 {
     public class Trip 
-        : Entity<Trip, TripId>, 
+        : Entity<Trip, Trip.DomainId>, 
           IAggregateRoot
     {
-        private TripId tripId;
         private PlaceId placeId;
-        public override TripId Id { get; protected set; }
+        public override Trip.DomainId Id { get; protected set; }
+
+        public class DomainId 
+        {
+        }
     }
 }

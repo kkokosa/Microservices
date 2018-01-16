@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj" />
     <ProjectReference Include="..\..\Domain\Trips.Domain.csproj" />
   </ItemGroup>

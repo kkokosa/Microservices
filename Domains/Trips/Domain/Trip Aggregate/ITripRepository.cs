@@ -2,7 +2,7 @@
 using System;
 using Trips.Domain;
 
-namespace Trips.Infrastructure
+namespace Trips.Domain
 {
     public interface ITripRepository : IRepository<Trip>
     {
