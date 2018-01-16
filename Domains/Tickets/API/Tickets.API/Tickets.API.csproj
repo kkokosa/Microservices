@@ -11,9 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TicketService.Commands\TicketService.Commands.csproj" />
-    <ProjectReference Include="..\TicketService.Queries\TicketService.Queries.csproj" />
-    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.IoC.DryIoc\Infrastructure.IoC.DryIoc.csproj" />
+    <ProjectReference Include="..\..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC.DryIoc\Infrastructure.IoC.DryIoc.csproj" />
+    <ProjectReference Include="..\Tickets.Commands\Tickets.Commands.csproj" />
+    <ProjectReference Include="..\Tickets.Queries\Tickets.Queries.csproj" />
   </ItemGroup>
 
   <ItemGroup>

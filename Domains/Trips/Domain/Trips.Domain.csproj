@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj" />
+    <ProjectReference Include="..\..\..\Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj" />
   </ItemGroup>
 
 </Project>

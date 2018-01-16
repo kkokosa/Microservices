@@ -12,9 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
-    <ProjectReference Include="..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
-    <ProjectReference Include="..\TicketService.Domain\Tickets.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\..\Domain\Tickets.Domain.csproj" />
   </ItemGroup>
 
 </Project>
