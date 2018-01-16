@@ -7,5 +7,6 @@ namespace Trips.Domain
 {
     public interface IOfferRepository : IRepository<Offer>
     {
+        Offer Add(Offer offer);
     }
 }
