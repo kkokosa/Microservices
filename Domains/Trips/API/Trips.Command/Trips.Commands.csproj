@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Framework\CQRS\ServicesFramework.CQRS\ServicesFramework.CQRS.csproj" />
     <ProjectReference Include="..\..\..\..\Framework\DDD\ServicesFramework.DDD\ServicesFramework.DDD.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.IoC\Infrastructure.IoC.csproj" />

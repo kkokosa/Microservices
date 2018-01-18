@@ -1,9 +1,10 @@
-﻿using ServicesFramework.CQRS;
+﻿using MediatR;
+using ServicesFramework.CQRS;
 using System;
 
 namespace Trips.Commands
 {
-    public class CreateOfferCommand : ICommand
+    public class CreateOfferCommand : IRequest<CreateOfferCommandResult>
     {
         public string Name { get; set; }
         public string Description { get; set; }

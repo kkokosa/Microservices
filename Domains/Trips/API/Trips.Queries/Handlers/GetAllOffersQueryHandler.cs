@@ -7,10 +7,13 @@ using System.Text;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using ServicesFramework.CQRS;
+using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Trips.Queries.Handlers
 {
-    public class GetAllOffersQueryHandler : IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult>
+    public class GetAllOffersQueryHandler : IRequestHandler<GetAllOffersQuery, GetAllOffersQueryResult>
     {
         private readonly IConfiguration configuration;
 
@@ -19,16 +22,16 @@ namespace Trips.Queries.Handlers
             this.configuration = configuration;
         }
 
-        public GetAllOffersQueryResult Handle(GetAllOffersQuery command)
+        public Task<GetAllOffersQueryResult> Handle(GetAllOffersQuery command, CancellationToken token)
         {
             using (IDbConnection db = new SqlConnection(configuration["ConnectionStrings:TripsDomainDatabase"]))
             {
                 var offers = db.Query<OfferViewModel>("Select Name, Description, NumberOfDays From Offers").ToList();
-                return new GetAllOffersQueryResult()
+                return Task.FromResult(new GetAllOffersQueryResult()
                 {
                     Count = offers.Count,
                     Orders = offers
-                };
+                });
             }            
         }
     }

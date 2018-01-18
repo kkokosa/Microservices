@@ -13,7 +13,7 @@ namespace Trips.Queries
     {
         public void RegisterInContainer(IIoCContainerRegistration containerRegistration)
         {
-            containerRegistration.Register<IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult>, GetAllOffersQueryHandler>();
+            //containerRegistration.Register<IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult>, GetAllOffersQueryHandler>();
         }
     }
 }

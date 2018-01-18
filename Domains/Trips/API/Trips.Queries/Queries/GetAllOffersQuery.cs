@@ -1,10 +1,11 @@
-﻿using ServicesFramework.CQRS;
+﻿using MediatR;
+using ServicesFramework.CQRS;
 using System;
 using System.Collections.Generic;
 
 namespace Trips.Queries
 {
-    public class GetAllOffersQuery : IQuery
+    public class GetAllOffersQuery : IRequest<GetAllOffersQueryResult>
     {
     }
 

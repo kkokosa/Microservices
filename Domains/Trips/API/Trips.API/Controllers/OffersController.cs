@@ -6,19 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using ServicesFramework.CQRS;
 using Trips.Commands;
 using Trips.Queries;
+using MediatR;
 
 namespace Trips.API.Controllers
 {
     [Route("api/[controller]")]
     public class OffersController : Controller
     {
+        private readonly IMediator mediator;
+
+        public OffersController(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+
         // GET api/offers
         [HttpGet]
-        public GetAllOffersQueryResult Get(
-            [FromServices] IQueryHandler<GetAllOffersQuery, GetAllOffersQueryResult> handler)
+        public GetAllOffersQueryResult Get()
         {
-            var result = handler.Handle(new GetAllOffersQuery());
-            return result;
+            var result = mediator.Send(new GetAllOffersQuery());
+            return result.Result;
         }
 
         // GET api/offers/5
@@ -31,17 +38,15 @@ namespace Trips.API.Controllers
         // POST api/offers
         [HttpPost]
         public string Post(
-            [FromBody]CreateOfferCommand createOfferCommand,
-            [FromServices] ICommandHandler<CreateOfferCommand, CreateOfferCommandResult> handler)
+            [FromBody]CreateOfferCommand createOfferCommand)
         {
-            var result = handler.Handle(createOfferCommand);
-            return result.Message;
+            var result = mediator.Send(createOfferCommand);
+            return result.Result.Message;
         }
 
         // PUT api/offers/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value,
-            [FromServices] ICommandHandler<CreateOfferCommand, CreateOfferCommandResult> handler)
+        public void Put(int id, [FromBody]string value)
         {
             throw new NotImplementedException();
         }

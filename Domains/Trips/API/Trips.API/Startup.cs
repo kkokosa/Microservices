@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using MediatR;
 
 namespace Trips.API
 {
@@ -37,6 +38,8 @@ namespace Trips.API
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<Trips.Infrastructure.OffersDbContext>();
             services.AddOptions();
+            services.AddMediatR(typeof(Trips.Commands.Module).Assembly, 
+                                typeof(Trips.Queries.Module).Assembly);
 
             this.container = new global::Infrastructure.IoC.DryIoc.DryIocContainer();
             this.container.Configure(
