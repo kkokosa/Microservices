@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trips.Domain.Events
 {
-    class PhotoToOfferAdded : IDomainEvent
+    public class PhotoToOfferAdded : IDomainEvent
     {
         public string Title { get; set; }
     }

@@ -11,9 +11,10 @@ using Trips.Infrastructure;
 namespace Trips.Infrastructure.Migrations
 {
     [DbContext(typeof(OffersDbContext))]
-    partial class OffersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180118224353_PlaceId added to offer")]
+    partial class PlaceIdaddedtooffer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

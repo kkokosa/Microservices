@@ -38,8 +38,10 @@ namespace Trips.API
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<Trips.Infrastructure.OffersDbContext>();
             services.AddOptions();
-            services.AddMediatR(typeof(Trips.Commands.Module).Assembly, 
-                                typeof(Trips.Queries.Module).Assembly);
+            services.AddMediatR(
+                typeof(Trips.Commands.Module).Assembly, 
+                typeof(Trips.Queries.Module).Assembly,
+                typeof(Trips.Domain.Events.PhotoToOfferAdded).Assembly);
 
             this.container = new global::Infrastructure.IoC.DryIoc.DryIocContainer();
             this.container.Configure(

@@ -15,6 +15,7 @@ namespace Trips.Domain
         public string Name { get; private set; }
         public string Description { get; private set; }
         public int NumberOfDays { get; private set; }
+        public string PlaceId { get; private set; }
 
         public IReadOnlyCollection<Photo> Photos => _photos;
 
