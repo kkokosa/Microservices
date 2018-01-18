@@ -9,6 +9,6 @@ namespace ServicesFramework.DDD
     {
         IUnitOfWork UnitOfWork { get; }
 
-        Task<bool> SaveChanges();
+        Task<bool> SaveChangesAndPublishEvents();
     }
 }

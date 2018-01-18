@@ -8,6 +8,6 @@ namespace ServicesFramework.DDD
 {
     public interface IUnitOfWork : IDisposable
     {
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
+        Task<int> SaveChangesAndPublishEventsAsync(CancellationToken cancellationToken);
     }
 }

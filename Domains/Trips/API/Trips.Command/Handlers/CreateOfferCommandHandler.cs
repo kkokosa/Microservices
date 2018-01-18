@@ -25,9 +25,8 @@ namespace Trips.Commands.Handlers
             var offer = new Offer(command.Name, command.Description, command.NumberOfDays);
 
             offer.AssignPhoto();
-
             offerRepository.Add(offer);
-            offerRepository.SaveChanges();
+            offerRepository.SaveChangesAndPublishEvents();
 
             return Task.FromResult(new CreateOfferCommandResult()
             {

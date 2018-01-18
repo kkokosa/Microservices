@@ -11,6 +11,8 @@ namespace Trips.Infrastructure
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Offer> builder)
         {
             builder.HasKey("_technicalId");
+
+            builder.Ignore(x => x.DomainEvents);
         }
     }
 }

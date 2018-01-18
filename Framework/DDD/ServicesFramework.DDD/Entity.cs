@@ -17,6 +17,17 @@ namespace ServicesFramework.DDD
     {
         protected int _technicalId;
 
+        private List<IDomainEvent> domainEvents;
+
+        public List<IDomainEvent> DomainEvents => domainEvents;
+
+        public void AddDomainEvent(IDomainEvent @event)
+        {
+            if (domainEvents == null)
+                domainEvents = new List<IDomainEvent>();
+            domainEvents.Add(@event);
+        }
+
         private int? cachedHashCode;
 
         /// <summary>

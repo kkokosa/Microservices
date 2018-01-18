@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ServicesFramework.DDD;
+using Trips.Domain.Events;
 
 namespace Trips.Domain
 {
@@ -37,6 +38,7 @@ namespace Trips.Domain
             photo.FilePath = "//d/Photos";
             photo.Description = "Pedzace zoltwie";
             _photos.Add(photo);
+            this.AddDomainEvent(new PhotoToOfferAdded() { Title = photo.Title });
         }
     }
 }
