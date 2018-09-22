@@ -15,7 +15,6 @@ namespace Trips.Commands
     {
         public void RegisterInContainer(IIoCContainerRegistration containerRegistration)
         {
-            //containerRegistration.Register<ICommandHandler<CreateOfferCommand, CreateOfferCommandResult>, CreateOfferCommandHandler>();
             containerRegistration.Register<IOfferRepository, OfferRepository>();
         }
     }

@@ -26,7 +26,7 @@ namespace Trips.Commands.Handlers
 
             offer.AssignPhoto();
             offerRepository.Add(offer);
-            offerRepository.SaveChangesAndPublishEvents();
+            offerRepository.SaveChangesAndPublishEventsAsync();
 
             return Task.FromResult(new CreateOfferCommandResult()
             {
