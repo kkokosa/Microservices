@@ -25,3 +25,8 @@ Roadmap:
 * Deployment
 	- [ ] Docker configuration
 	- [ ] Docker Compose configuration
+
+
+# Devployment
+
+Update-Database

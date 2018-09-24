@@ -20,18 +20,18 @@ namespace Trips.Commands.Handlers
             this.mediator = mediator;
         }
 
-        public Task<CreateOfferCommandResult> Handle(CreateOfferCommand command, CancellationToken cancellationToken)
+        public async Task<CreateOfferCommandResult> Handle(CreateOfferCommand command, CancellationToken cancellationToken)
         {
             var offer = new Offer(command.Name, command.Description, command.NumberOfDays);
 
             offer.AssignPhoto();
             offerRepository.Add(offer);
-            offerRepository.SaveChangesAndPublishEventsAsync();
+            await offerRepository.SaveChangesAndPublishEventsAsync();
 
-            return Task.FromResult(new CreateOfferCommandResult()
+            return new CreateOfferCommandResult()
             {
                 Message = $"Hello {command.Name}!"
-            });
+            };
         }
     }
 }

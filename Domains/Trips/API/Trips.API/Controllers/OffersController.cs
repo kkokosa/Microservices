@@ -37,11 +37,11 @@ namespace Trips.API.Controllers
 
         // POST api/offers
         [HttpPost]
-        public string Post(
+        public async Task<string> Post(
             [FromBody]CreateOfferCommand createOfferCommand)
         {
-            var result = mediator.Send(createOfferCommand);
-            return result.Result.Message;
+            var result = await mediator.Send(createOfferCommand);
+            return result.Message;
         }
 
         // PUT api/offers/5
