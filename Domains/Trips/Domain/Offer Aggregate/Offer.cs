@@ -41,5 +41,10 @@ namespace Trips.Domain
             _photos.Add(photo);
             this.AddDomainEvent(new PhotoToOfferAdded() { Title = photo.Title });
         }
+
+        ~Offer()
+        {
+
+        }
     }
 }
