@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://localhost:9000",
+  "Organization": null,
+  "ProjectKey": "TravelAgency",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AWYvBJ3h5fG81iJF0sO-",
+      "ProfileTimestamp": "2018-10-01T11:45:23+02:00"
+    }
+  }
+}
