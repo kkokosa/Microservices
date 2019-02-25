@@ -25,7 +25,7 @@ namespace Trips.Infrastructure
 
         public async Task<bool> SaveChangesAndPublishEventsAsync()
         {
-            var entitiesWritten = await context.SaveChangesAndPublishEventsAsync();
+            await context.SaveChangesAndPublishEventsAsync();
             return true;
         }
     }

@@ -39,7 +39,7 @@ namespace Trips.Infrastructure
                                     });
         }
 
-        public async Task<int> SaveChangesAndPublishEventsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SaveChangesAndPublishEventsAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var domainEntities = ChangeTracker
                             .Entries<IEntity>()
@@ -53,11 +53,11 @@ namespace Trips.Infrastructure
             domainEntities.ToList()
                 .ForEach(entity => entity.Entity.DomainEvents.Clear());
 
+            await base.SaveChangesAsync(cancellationToken);
+
             var tasks = domainEvents
                 .Select(async (domainEvent) => await mediator.Publish(domainEvent));
-
             await Task.WhenAll(tasks);
-            return await base.SaveChangesAsync(cancellationToken);
         }
     }
 }
